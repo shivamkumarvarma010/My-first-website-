@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grandeur | JP Hotel Residency</title>
+    <style>
+        :root { --gold: #d4af37; --dark: #121212; --white: #ffffff; --green: #28a745; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
+        
+        /* Nav */
+        nav { background: var(--dark); padding: 15px; text-align: center; border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
+        .logo { color: var(--gold); font-size: 22px; font-weight: bold; letter-spacing: 2px; }
+
+        /* Banner */
+        .hero {
+            height: 55vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/Q79b01cF/2773.jpg');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+        }
+        .hero h1 { font-size: 32px; margin: 0; color: var(--gold); }
+        .hero p { font-size: 18px; margin-top: 10px; }
+
+        /* Content */
+        .content { padding: 20px; max-width: 600px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 24px; margin: 30px 0 10px; color: var(--dark); }
+        .gold-divider { width: 50px; height: 3px; background: var(--gold); margin: 0 auto 30px; }
+
+        .card { background: white; border-radius: 12px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border: 1px solid #ddd; position: relative; }
+        .badge { position: absolute; top: 15px; right: 15px; background: var(--gold); color: black; padding: 5px 12px; border-radius: 20px; font-weight: bold; font-size: 12px; }
+        .card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        
+        .card-body { padding: 15px; text-align: center; }
+        .card-body h3 { margin: 5px 0; font-size: 20px; color: var(--dark); }
+        .price-tag { font-size: 22px; color: var(--green); font-weight: bold; margin: 10px 0; }
+        .editable-price { border: 1px dashed #ccc; padding: 2px 5px; cursor: pointer; }
+
+        /* PG Section */
+        .pg-info { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid var(--gold); }
+        .pg-tag { display: inline-block; background: #e9ecef; padding: 4px 10px; border-radius: 4px; margin: 5px; font-size: 14px; font-weight: bold; }
+
+        /* Footer & Contact */
+        .address-box { text-align: center; margin-top: 20px; padding: 25px; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .call-now {
+            position: fixed; bottom: 20px; width: 90%; left: 5%;
+            background: var(--green); color: white; text-align: center;
+            padding: 15px; border-radius: 50px; text-decoration: none;
+            font-weight: bold; font-size: 18px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 999; display: flex; justify-content: center; align-items: center; gap: 10px;
+        }
+        footer { text-align: center; padding: 40px 20px 100px; background: #eee; font-size: 13px; color: #777; }
+    </style>
+</head>
+<body>
+
+    <nav><div class="logo">THE GRANDEUR</div></nav>
+
+    <section class="hero">
+        <h1>JP HOTEL RESIDENCY</h1>
+        <p>Premium AC & Non-AC Rooms<br><small>Sector 27, Noida</small></p>
+    </section>
+
+    <div class="content">
+        
+        <div class="pg-info">
+            <h3 style="margin-top:0;">Upper Floor: Premium PG</h3>
+            <p>Dedicated floors for students and professionals.</p>
+            <span class="pg-tag">👦 Boys PG Available 8000 par month</span>
+            <span class="pg-tag">👧 Girls PG Available 8000 par month</span>
+        </div>
+
+        <h2 class="section-title">Our Rooms</h2>
+        <div class="gold-divider"></div>
+
+        <div class="card">
+            <span class="badge">AC ROOM</span>
+            <img src="https://i.ibb.co/b5XQx7v2/2768.png" alt="Luxury AC Room">
+            <div class="card-body">
+                <h3>Royal AC Suite</h3>
+                <p>Fully furnished with premium split AC & luxury bedding.</p>
+                <div class="price-tag">₹<span class="editable-price" onclick="updatePrice(this)">800</span>/-</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="badge" style="background:#555; color:white;">NON-AC ROOM</span>
+            <img src="https://i.ibb.co/zh6gTmLm/2767.png" alt="Standard Room">
+            <div class="card-body">
+                <h3>Standard Comfort</h3>
+                <p>Well-ventilated rooms with modern fittings.</p>
+                <div class="price-tag">₹<span class="editable-price" onclick="updatePrice(this)">1000</span>/-</div>
+            </div>
+        </div>
+
+        <div class="address-box">
+            <p><strong>📍 Address:</strong> Sector 27, 2nd Floor, JP Residency, Noida</p>
+            <p><strong>👤 Manager:</strong> Harendra Sharma</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Grandeur Hotel Group<br>High-Quality Living Experience</p>
+    </footer>
+
+    <a href="tel:9870868615" class="call-now">
+        <span>📞 CALL: 9870868615</span>
+    </a>
+
+    <script>
+        // Simple password-protected price update for owner
+        function updatePrice(element) {
+            let password = prompt("Owner Password darj karein:");
+            if (password === "1234") { // Aap apna password yaha set kar sakte hain
+                let newPrice = prompt("Naya Price daalein:", element.innerText);
+                if (newPrice != null) {
+                    element.innerText = newPrice;
+                }
+            } else {
+                alert("Galat password!");
+            }
+        }
+    </script>
+
+</body>
+</html>
